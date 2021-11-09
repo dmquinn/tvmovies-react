@@ -2,7 +2,7 @@ import React from "react";
 
 const MoviesList = ({ movies }) => {
   return (
-    <div className="px-20 grid grid-cols-3 gap-6">
+    <div className="px-20 grid grid-cols-4 gap-6">
       {movies.map((movie, i) => {
         return (
           <img

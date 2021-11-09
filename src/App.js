@@ -2,13 +2,15 @@ import Homescreen from "./Homescreen";
 import { useEffect, useState } from "react";
 function App() {
   const API_URL_MOVIES =
-    "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1&with_genres=26";
+    "https://api.themoviedb.org/3/discover/movie?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1&with_genres=878";
   const API_URL_TV =
     "https://api.themoviedb.org/3/discover/tv?sort_by=popularity.desc&api_key=3fd2be6f0c70a2a598f084ddfb75487c&page=1";
   let data;
+
   const [movies, setMovies] = useState([]);
   const [banner, setBanner] = useState(null);
   const random = Math.floor(Math.random() * Math.floor(20));
+  const [search, setSearch] = useState("");
 
   useEffect(() => {
     async function getMovies(url) {
@@ -24,7 +26,13 @@ function App() {
 
   return (
     <>
-      <Homescreen movies={movies} banner={banner} />
+      <div className="backImage w-screen h-screen"></div>
+      <Homescreen
+        movies={movies}
+        banner={banner}
+        search={search}
+        setSearch={setSearch}
+      />
     </>
   );
 }

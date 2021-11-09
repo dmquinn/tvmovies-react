@@ -9,11 +9,11 @@ const Banner = ({ banner }) => {
     !!banner && (
       <div class="pt-6 pb-12">
         <div id="card">
-          <div class="container w-100 lg:w-3/5 mx-auto">
-            <div class="flex flex-col md:flex-row bg-gray-700 rounded-lg shadow-xl w-100 mx-2 ">
+          <div class=" lg:w-3/5 mx-auto opacity-70 shadow-def">
+            <div class="flex flex-col md:flex-row bg-gray-700 rounded-lg w-full">
               <div class="h-96 w-auto md:w-1/2 ">
                 <img
-                  class="inset-0 h-full w-full object-cover -mt-10 ml-5 shadow-xl"
+                  class="inset-0 h-full w-full object-cover -mt-10 ml-5 shadow-light rounded-md"
                   src={
                     "https://image.tmdb.org/t/p/w1280/" + banner.backdrop_path
                   }
