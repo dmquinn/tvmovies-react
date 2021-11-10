@@ -4,13 +4,13 @@ import MoviesList from "./MoviesList";
 import Nav from "./Nav";
 import Search from "./Search";
 
-const Homescreen = ({ movies, banner, search, setSearch }) => {
+const Homescreen = ({ movies, banner, search, setSearch, setGenre }) => {
   return (
     <>
       <Search search={search} setSearch={setSearch} />
       <div className="h-40" />
-      <Banner banner={banner} />
-      <Nav />
+      {!search && <Banner banner={banner} />}
+      <Nav setGenre={setGenre} />
       <MoviesList movies={movies} />
     </>
   );

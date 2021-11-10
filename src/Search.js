@@ -1,8 +1,9 @@
 import React from "react";
 
-const Search = (search, setSearch) => {
+const Search = ({ search, setSearch }) => {
   const handleChange = (e) => {
     setSearch(e.target.value);
+    console.log("search", e.target.value);
   };
   return (
     <div className="my-5 ml-20">

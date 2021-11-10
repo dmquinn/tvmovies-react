@@ -1,44 +1,55 @@
 import React from "react";
 
-const Nav = () => {
+const Nav = ({ setGenre }) => {
   return (
     <div>
-      <nav class="pb-10 shadow-lg">
+      <nav class="pb-10 shadow-lg mt-5">
         <div class="max-w-6xl mx-auto">
           <div class="flex justify-between">
             <div class="flex w-full border-b pb-5">
               <div>
-                <a href="#" class="flex items-center py-4 px-2">
-                  <span class="font-semibold text-gray-200 text-lg">
-                    Recommended
-                  </span>
-                </a>
+                <span class="font-semibold text-gray-200 text-lg px-2">
+                  Categories
+                </span>
               </div>
-              <div class="hidden md:flex items-center space-x-1">
-                <a
-                  href=""
-                  class="py-4 px-2 text-green-500 border-b-4 border-green-500 font-semibold "
+              <div class="hidden md:flex items-center space-x-5 ml-10">
+                <p
+                  class=" px-2 text-gray-500 focus:text-red-200 font-semibold  hover:transition duration-300"
+                  onClick={() => setGenre("28")}
                 >
+                  {" "}
                   Action
-                </a>
-                <a
-                  href=""
-                  class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                </p>
+                <p
+                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                  onClick={() => setGenre("35")}
                 >
                   Comedy
-                </a>
-                <a
-                  href=""
-                  class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                </p>
+                <p
+                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                  onClick={() => setGenre("27")}
                 >
                   Horror
-                </a>
-                <a
-                  href=""
-                  class="py-4 px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                </p>
+                <p
+                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                  onClick={() => setGenre("10749")}
                 >
                   Romance{" "}
-                </a>
+                </p>
+                <p
+                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                  onClick={() => setGenre("878")}
+                >
+                  Sci-fi{" "}
+                </p>
+                <p
+                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
+                  onClick={() => setGenre("99")}
+                >
+                  Documentary{" "}
+                </p>
               </div>
             </div>
             <div class="hidden md:flex items-center space-x-3 "></div>
@@ -63,36 +74,30 @@ const Nav = () => {
         <div class="hidden mobile-menu">
           <ul class="">
             <li class="active">
-              <a
+              <p
                 href="index.html"
-                class="block text-sm px-2 py-4 text-white bg-green-500 font-semibold"
+                class="block text-sm px-2  text-white bg-green-500 font-semibold"
               >
                 Home
-              </a>
+              </p>
             </li>
             <li>
-              <a
-                href="#services"
-                class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-              >
+              <p class="block text-sm px-2  hover:bg-green-500 transition duration-300">
                 Services
-              </a>
+              </p>
             </li>
             <li>
-              <a
-                href="#about"
-                class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
-              >
+              <p class="block text-sm px-2  hover:bg-green-500 transition duration-300">
                 About
-              </a>
+              </p>
             </li>
             <li>
-              <a
+              <p
                 href="#contact"
-                class="block text-sm px-2 py-4 hover:bg-green-500 transition duration-300"
+                class="block text-sm px-2  hover:bg-green-500 transition duration-300"
               >
                 Contact Us
-              </a>
+              </p>
             </li>
           </ul>
         </div>

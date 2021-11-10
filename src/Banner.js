@@ -1,10 +1,6 @@
 import React, { useEffect } from "react";
-import Carousel from "react-spring-3d-carousel";
 
-const Banner = ({ banner }) => {
-  useEffect(() => {
-    console.log(banner);
-  });
+const Banner = ({ banner, search }) => {
   return (
     !!banner && (
       <div class="pt-6 pb-12">
