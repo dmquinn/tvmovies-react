@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 
 const Nav = ({ setGenre }) => {
   return (
@@ -14,7 +14,7 @@ const Nav = ({ setGenre }) => {
               </div>
               <div class="hidden md:flex items-center space-x-5 ml-10">
                 <p
-                  class=" px-2 text-gray-500 focus:text-red-200 font-semibold  hover:transition duration-300"
+                  class=" px-2 text-gray-500 focus:text-red-200 font-semibold hover:transition duration-300"
                   onClick={() => setGenre("28")}
                 >
                   {" "}
