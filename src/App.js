@@ -37,7 +37,7 @@ function App() {
           `https://api.themoviedb.org/3/search/tv?api_key=${key}&query="` +
             search
         );
-  }, [search, genre, mode]);
+  }, [search, genre, mode, key, API_URL_MOVIES, API_URL_TV, random]);
 
   return (
     <>
