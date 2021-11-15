@@ -1,62 +1,118 @@
 import React, { useState } from "react";
 
 const Nav = ({ setGenre }) => {
+  const [currentTab, setCurrentTab, search] = useState(null);
+
   return (
     <div>
-      <nav class="pb-10 shadow-lg mt-5">
-        <div class="max-w-6xl mx-auto">
-          <div class="flex justify-between">
-            <div class="flex w-full border-b pb-5">
+      <nav className="pb-10 shadow-lg mt-5">
+        <div className="max-w-6xl mx-auto">
+          <div className="flex justify-between cursor-pointer">
+            <div className="flex w-full pb-5">
               <div>
-                <span class="font-semibold text-gray-200 text-lg px-2">
+                <span className="font-semibold text-gray-200 text-lg px-2">
                   Categories
                 </span>
               </div>
-              <div class="hidden md:flex items-center space-x-5 ml-10">
+              <div className="hidden md:flex items-center space-x-5 ml-10">
                 <p
-                  class=" px-2 text-gray-500 focus:text-red-200 font-semibold hover:transition duration-300"
-                  onClick={() => setGenre("28")}
+                  className={
+                    !search && currentTab === ""
+                      ? "px-2 text-red-500 font-semibold border-red-500 pb-6 border-4"
+                      : "px-2 text-gray-500 font-semibold transition duration-300"
+                  }
+                  onClick={(e) => {
+                    setGenre("");
+                    setCurrentTab("");
+                  }}
                 >
-                  {" "}
+                  All
+                </p>
+                <p
+                  className={
+                    !search && currentTab === "action"
+                      ? "px-2 text-red-500 font-semibold border-red-500 pb-6 border-4"
+                      : "px-2 text-gray-500 font-semibold transition duration-300"
+                  }
+                  onClick={(e) => {
+                    setGenre("28");
+                    setCurrentTab("action");
+                  }}
+                >
                   Action
                 </p>
                 <p
-                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                  onClick={() => setGenre("35")}
+                  className={
+                    !search && currentTab === "comedy"
+                      ? "px-2 text-red-500 font-semibold border-red-500 pb-6 border-4"
+                      : "px-2 text-gray-500 font-semibold transition duration-300"
+                  }
+                  onClick={(e) => {
+                    setGenre("35");
+                    setCurrentTab("comedy");
+                  }}
                 >
                   Comedy
                 </p>
                 <p
-                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                  onClick={() => setGenre("27")}
+                  className={
+                    !search && currentTab === "horror"
+                      ? "px-2 text-red-500 font-semibold border-red-500 pb-6 border-4"
+                      : "px-2 text-gray-500 font-semibold transition duration-300"
+                  }
+                  onClick={(e) => {
+                    setGenre("27");
+                    setCurrentTab("horror");
+                  }}
                 >
                   Horror
                 </p>
                 <p
-                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                  onClick={() => setGenre("10749")}
+                  className={
+                    !search && currentTab === "romance"
+                      ? "px-2 text-red-500 font-semibold border-red-500 pb-6 border-4"
+                      : "px-2 text-gray-500 font-semibold transition duration-300"
+                  }
+                  onClick={(e) => {
+                    setGenre("10749");
+                    setCurrentTab("romance");
+                  }}
                 >
                   Romance{" "}
                 </p>
                 <p
-                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                  onClick={() => setGenre("878")}
+                  className={
+                    !search && currentTab === "scifi"
+                      ? "px-2 text-red-500 font-semibold border-red-500 pb-6 border-4"
+                      : "px-2 text-gray-500 font-semibold transition duration-300"
+                  }
+                  onClick={(e) => {
+                    setGenre("878");
+                    setCurrentTab("scifi");
+                  }}
                 >
                   Sci-fi{" "}
                 </p>
                 <p
-                  class=" px-2 text-gray-500 font-semibold hover:text-green-500 transition duration-300"
-                  onClick={() => setGenre("99")}
+                  className={
+                    !search && currentTab === "documentary"
+                      ? "px-2 text-red-500 font-semibold border-red-500 pb-6 border-4"
+                      : "px-2 text-gray-500 font-semibold transition duration-300"
+                  }
+                  onClick={(e) => {
+                    setGenre("99");
+                    setCurrentTab("documentary");
+                  }}
                 >
                   Documentary{" "}
                 </p>
               </div>
             </div>
-            <div class="hidden md:flex items-center space-x-3 "></div>
-            <div class="md:hidden flex items-center">
-              <button class="outline-none mobile-menu-button">
+            <div className="hidden md:flex items-center space-x-3 "></div>
+            <div className="md:hidden flex items-center">
+              <button className="outline-none mobile-menu-button">
                 <svg
-                  class=" w-6 h-6 text-gray-500 hover:text-green-500 "
+                  className=" w-6 h-6 text-gray-500 hover:text-green-500 "
                   x-show="!showMenu"
                   fill="none"
                   stroke-linecap="round"
@@ -71,30 +127,30 @@ const Nav = ({ setGenre }) => {
             </div>
           </div>
         </div>
-        <div class="hidden mobile-menu">
-          <ul class="">
-            <li class="active">
+        <div className="hidden mobile-menu">
+          <ul className="">
+            <li className="active">
               <p
                 href="index.html"
-                class="block text-sm px-2  text-white bg-green-500 font-semibold"
+                className="block text-sm px-2  text-white bg-green-500 font-semibold"
               >
                 Home
               </p>
             </li>
             <li>
-              <p class="block text-sm px-2  hover:bg-green-500 transition duration-300">
+              <p className="block text-sm px-2  hover:bg-green-500 transition duration-300">
                 Services
               </p>
             </li>
             <li>
-              <p class="block text-sm px-2  hover:bg-green-500 transition duration-300">
+              <p className="block text-sm px-2  hover:bg-green-500 transition duration-300">
                 About
               </p>
             </li>
             <li>
               <p
                 href="#contact"
-                class="block text-sm px-2  hover:bg-green-500 transition duration-300"
+                className="block text-sm px-2  hover:bg-green-500 transition duration-300"
               >
                 Contact Us
               </p>

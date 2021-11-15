@@ -3,6 +3,8 @@ import Banner from "./Banner";
 import MoviesList from "./MoviesList";
 import Nav from "./Nav";
 import Search from "./Search";
+import Trailer from "./Trailer";
+import Mode from "./Mode";
 
 const Homescreen = ({
   movies,
@@ -10,28 +12,41 @@ const Homescreen = ({
   search,
   setSearch,
   setGenre,
-  setTorch,
-  torch,
+  mode,
+  setMode,
+  setTitle,
+  showModal,
+  setShowModal,
+  title,
 }) => {
-  const handleClick = () => {
-    torch ? setTorch(false) : setTorch(true);
-  };
-
   return (
     <>
-      <i
-        className={
-          torch
-            ? "far fa-lightbulb fa-2x absolute right-10 text-white"
-            : "far fa-lightbulb fa-2x absolute right-10 text-gray-500"
-        }
-        onClick={handleClick}
-      ></i>
       <Search search={search} setSearch={setSearch} />
+      <Mode setMode={setMode} mode={mode} />
       <div className="h-40" />
-      {!search && <Banner banner={banner} />}
-      <Nav setGenre={setGenre} />
-      <MoviesList movies={movies} />
+      {!search && (
+        <Banner
+          banner={banner}
+          showModal={showModal}
+          setShowModal={setShowModal}
+          setTitle={setTitle}
+          mode={mode}
+          title={title}
+        />
+      )}
+      <Nav setGenre={setGenre} search={search} />
+      <MoviesList
+        movies={movies}
+        setTitle={setTitle}
+        showModal={showModal}
+        setShowModal={setShowModal}
+        mode={mode}
+      />
+      <Trailer
+        showModal={showModal}
+        setShowModal={setShowModal}
+        title={title}
+      />
     </>
   );
 };

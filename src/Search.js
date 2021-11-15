@@ -1,12 +1,11 @@
 import React from "react";
 
-const Search = ({ search, setSearch }) => {
+const Search = ({ setSearch }) => {
   const handleChange = (e) => {
     setSearch(e.target.value);
-    console.log("search", e.target.value);
   };
   return (
-    <div className="my-5 ml-20">
+    <div className="my-5 ml-2 md:ml-20">
       <input
         className="rounded-lg bg-transparent border p-1 px-5 text-white"
         placeholder="search . . ."
