@@ -1,13 +1,18 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
+interface Props {
+setMode: Dispatch<SetStateAction<string>>,
+mode: string,
+}
+const Mode:React.FC<Props> = ({ setMode, mode }) => {
 
-const Mode = ({ setMode, mode }) => {
   const handleChange = () => {
     mode === "movies" ? setMode("tv") : setMode("movies");
   };
+
   return (
     <div className="absolute right-5 top-5 flex">
       <p className="px-3 pt-1 text-gray-200">Movies</p>
-      <label for="toggleB" className="flex items-center cursor-pointer">
+      <label htmlFor="toggleB" className="flex items-center cursor-pointer">
         <div className="relative">
           <input
             type="checkbox"

@@ -1,6 +1,10 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 
-const Search = ({ setSearch }) => {
+interface Props {
+  setSearch: Dispatch<SetStateAction<string>>,
+}
+
+const Search:React.FC<Props> = ({ setSearch }) => {
   const handleChange = (e) => {
     setSearch(e.target.value);
   };

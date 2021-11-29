@@ -1,7 +1,12 @@
-import React, { useState } from "react";
+import React, { Dispatch, SetStateAction, useState } from "react";
 
-const Nav = ({ setGenre }) => {
-  const [currentTab, setCurrentTab, search] = useState(null);
+interface Props {
+  setGenre: Dispatch<SetStateAction<string>>,
+  setCurrentTab?: Dispatch<SetStateAction<string>>,
+  search: string
+}
+const Nav:React.FC<Props> = ({ setGenre, search }) => {
+  const [currentTab, setCurrentTab] = useState<string | null>(null);
 
   return (
     <div>
@@ -131,7 +136,6 @@ const Nav = ({ setGenre }) => {
           <ul className="">
             <li className="active">
               <p
-                href="index.html"
                 className="block text-sm px-2  text-white bg-green-500 font-semibold"
               >
                 Home
@@ -149,7 +153,6 @@ const Nav = ({ setGenre }) => {
             </li>
             <li>
               <p
-                href="#contact"
                 className="block text-sm px-2  hover:bg-green-500 transition duration-300"
               >
                 Contact Us
@@ -157,14 +160,6 @@ const Nav = ({ setGenre }) => {
             </li>
           </ul>
         </div>
-        {/* <script>
-				const btn = document.querySelector("button.mobile-menu-button");
-				const menu = document.querySelector(".mobile-menu");
-
-				btn.addEventListener("click", () => {
-					menu.classList.toggle("hidden");
-				});
-			</script> */}
       </nav>
     </div>
   );

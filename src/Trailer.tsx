@@ -1,7 +1,13 @@
-import React, { useEffect, useState } from "react";
+import React, { Dispatch, SetStateAction, useEffect, useState } from "react";
 
-export default function Modal({ setShowModal, showModal, title }) {
-  const [embedCode, setEmbedCode] = useState("");
+interface Props {
+  setShowModal: Dispatch<SetStateAction<boolean>>,
+  showModal: boolean,
+  title: string,
+}
+
+const Trailer:React.FC<Props> =({ setShowModal, showModal, title }) => {
+  const [embedCode, setEmbedCode] = useState<string>("");
   const key = process.env.REACT_APP_YOUTUBE;
   useEffect(() => {
     async function youtube() {
@@ -70,3 +76,5 @@ export default function Modal({ setShowModal, showModal, title }) {
     </>
   );
 }
+
+export default Trailer

@@ -1,6 +1,13 @@
-import React from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Rating from "./Rating";
+import {MovieType} from "./types"
+interface Props {
+  movies: MovieType,
+        setTitle: Dispatch<SetStateAction<string>>,
+                setShowModal: Dispatch<SetStateAction<boolean>>,
 
+
+}
 const MoviesList = ({ movies, setTitle, setShowModal, mode }) => {
   return (
     <div className="px-20 grid md:grid-cols-4 gap-6">

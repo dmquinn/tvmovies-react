@@ -1,14 +1,31 @@
-import React, { useEffect } from "react";
+import React, { Dispatch, SetStateAction } from "react";
 import Banner from "./Banner";
 import MoviesList from "./MoviesList";
 import Nav from "./Nav";
 import Search from "./Search";
 import Trailer from "./Trailer";
 import Mode from "./Mode";
+import { BannerType } from "./types";
 
-const Homescreen = ({
+interface Props {
+  movies: object[] | null,
+  banner: BannerType | null,
+  search:  string,
+   setSearch: Dispatch<SetStateAction<string>>,
+  setGenre: Dispatch<SetStateAction<string>>,
+    setMode: Dispatch<SetStateAction<string>>,
+      setTitle: Dispatch<SetStateAction<string>>,
+        setShowModal: Dispatch<SetStateAction<boolean>>,
+        showModal: boolean,
+        mode: string,
+        title: string,
+        genre?: string,
+
+}
+
+const Homescreen:React.FC<Props> = ({
   movies,
-  banner,
+  banner ,
   search,
   setSearch,
   setGenre,
@@ -21,7 +38,7 @@ const Homescreen = ({
 }) => {
   return (
     <>
-      <Search search={search} setSearch={setSearch} />
+      <Search setSearch={setSearch} />
       <Mode setMode={setMode} mode={mode} />
       <div className="h-40" />
       {!search && (
@@ -38,7 +55,6 @@ const Homescreen = ({
       <MoviesList
         movies={movies}
         setTitle={setTitle}
-        showModal={showModal}
         setShowModal={setShowModal}
         mode={mode}
       />
